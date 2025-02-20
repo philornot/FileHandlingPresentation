@@ -7,10 +7,9 @@
 		<h2 class="text-2xl font-bold mb-8">Dlaczego warto używać with?</h2>
 		<Transition>
 		  <ul class="space-y-6">
-			<li class="text-xl">Mniej kodu do napisania</li>
-			<li class="text-xl">Nie trzeba pamiętać o zamykaniu pliku</li>
-			<li class="text-xl">Python zrobi to za nas automatycznie</li>
-			<li class="text-xl">Tak piszą profesjonalni programiści</li>
+			<li class="text">Mniej kodu do napisania</li>
+			<li class="text">Nie trzeba pamiętać o zamykaniu pliku</li>
+			<li class="text">Python zrobi to za nas automatycznie</li>
 		  </ul>
 		</Transition>
 	  </div>
