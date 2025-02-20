@@ -1,30 +1,34 @@
-<script>
+<script lang="ts">
 	import { Code, Action } from '@animotion/core'
+	let code: ReturnType<typeof Code>
 	
-	let traditionalCode;
+	function showLines(lines: string) {
+	  if (code) {
+		code.selectLines(lines)
+	  }
+	}
 	</script>
 	
 	<div class="grid h-full place-content-center place-items-center">
 	  <div class="w-full max-w-3xl bg-white/5 rounded-xl p-6">
-		<h2 class="text-3xl font-bold mb-4">Sposób 1: Tradycyjny</h2>
+		<h2 class="text-2xl font-bold mb-4">Sposób z with - prostszy i bezpieczniejszy!</h2>
 		<Code
-		  bind:this={traditionalCode}
+		  bind:this={code}
 		  lang="python"
 		  theme="github-dark"
 		  code={`
-	# Otwieramy plik
-	plik = open("notatki.txt", "r")
-	
-	# Czytamy zawartość
-	tekst = plik.read()
-	
-	# Musimy pamiętać o zamknięciu!
-	plik.close()
+	# Ten sam efekt, ale prościej i bezpieczniej:
+	with open("dane.txt", "r") as plik:
+		tekst = plik.read()
+	# Python automatycznie zamknie plik po zakończeniu!
 		  `}
+		  options={{
+			showAll: false
+		  }}
 		/>
 	  </div>
 	</div>
 	
-	<Action do={() => traditionalCode.selectLines`2`} />
-	<Action do={() => traditionalCode.selectLines`5`} />
-	<Action do={() => traditionalCode.selectLines`8`} />
+	<Action do={() => showLines('1-2')} />
+	<Action do={() => showLines('1-3')} />
+	<Action do={() => showLines('*')} />

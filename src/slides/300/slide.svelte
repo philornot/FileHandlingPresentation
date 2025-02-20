@@ -1,26 +1,17 @@
-<script>
-	import { Code, Action } from '@animotion/core'
-	
-	let modernCode;
+<script lang="ts">
+	import { Transition } from '@animotion/core'
 	</script>
 	
 	<div class="grid h-full place-content-center place-items-center">
-	  <div class="w-full max-w-3xl bg-white/5 rounded-xl p-6">
-		<h2 class="text-3xl font-bold mb-4">Sposób 2: Nowoczesny (z with)</h2>
-		<Code
-		  bind:this={modernCode}
-		  lang="python"
-		  theme="github-dark"
-		  code={`
-	# Krócej i bezpieczniej!
-	with open("notatki.txt", "r") as plik:
-		tekst = plik.read()
-	# Plik zostanie automatycznie zamknięty!
-		  `}
-		/>
+	  <div class="w-full max-w-3xl p-12">
+		<h2 class="text-2xl font-bold mb-8">Dlaczego warto używać with?</h2>
+		<Transition>
+		  <ul class="space-y-6">
+			<li class="text-xl">Mniej kodu do napisania</li>
+			<li class="text-xl">Nie trzeba pamiętać o zamykaniu pliku</li>
+			<li class="text-xl">Python zrobi to za nas automatycznie</li>
+			<li class="text-xl">Tak piszą profesjonalni programiści</li>
+		  </ul>
+		</Transition>
 	  </div>
 	</div>
-	
-	<Action do={() => modernCode.selectLines`2`} />
-	<Action do={() => modernCode.selectLines`3`} />
-	<Action do={() => modernCode.selectLines`4`} />
